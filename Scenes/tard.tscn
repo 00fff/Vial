@@ -1,0 +1,53 @@
+[gd_scene load_steps=9 format=3 uid="uid://dhom77rucle1m"]
+
+[ext_resource type="Texture2D" uid="uid://bixn327fhjnch" path="res://assets/dinos/DinoSprites - tard.png" id="1_aakac"]
+[ext_resource type="Script" path="res://Scripts/tard.gd" id="1_ipkth"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ymfib"]
+atlas = ExtResource("1_aakac")
+region = Rect2(0, 0, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tc42o"]
+atlas = ExtResource("1_aakac")
+region = Rect2(24, 0, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_veixb"]
+atlas = ExtResource("1_aakac")
+region = Rect2(48, 0, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fksbt"]
+atlas = ExtResource("1_aakac")
+region = Rect2(72, 0, 24, 24)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ipj01"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ymfib")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_tc42o")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_veixb")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fksbt")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_8u3qg"]
+size = Vector2(9, 15)
+
+[node name="Tard" type="CharacterBody2D"]
+script = ExtResource("1_ipkth")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_ipj01")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-0.5, 0.5)
+shape = SubResource("RectangleShape2D_8u3qg")
