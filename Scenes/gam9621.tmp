@@ -1,8 +1,9 @@
-[gd_scene load_steps=11 format=3 uid="uid://dlfgvc0w3k4aq"]
+[gd_scene load_steps=12 format=3 uid="uid://dlfgvc0w3k4aq"]
 
 [ext_resource type="PackedScene" uid="uid://dhom77rucle1m" path="res://Scenes/tard.tscn" id="1_10i7l"]
 [ext_resource type="PackedScene" uid="uid://dvfqh8n26j6ci" path="res://Scenes/frogMan.tscn" id="1_cr66n"]
 [ext_resource type="Texture2D" uid="uid://dynn4gnbxgkvy" path="res://assets/Free/Terrain/Terrain (16x16).png" id="2_t1rst"]
+[ext_resource type="Script" path="res://Scripts/void.gd" id="3_hs6a3"]
 [ext_resource type="Texture2D" uid="uid://dyxhxxf5es37s" path="res://assets/Free/Background/Blue.png" id="3_mjc14"]
 [ext_resource type="Texture2D" uid="uid://b8uo736qv0a5w" path="res://assets/Free/Background/Pink.png" id="4_rqq2o"]
 
@@ -547,7 +548,7 @@ sources/1 = SubResource("TileSetAtlasSource_wcqso")
 sources/2 = SubResource("TileSetAtlasSource_al8yg")
 sources/5 = SubResource("TileSetAtlasSource_d0pg1")
 
-[node name="Vial" type="Node2D"]
+[node name="Game" type="Node2D"]
 
 [node name="frogMan" parent="." instance=ExtResource("1_cr66n")]
 position = Vector2(166, -15)
@@ -558,9 +559,10 @@ position = Vector2(-99, 8)
 [node name="Camera2D2" type="Camera2D" parent="Tard"]
 zoom = Vector2(4, 4)
 
-[node name="world_border_thing" type="Area2D" parent="."]
+[node name="void" type="Area2D" parent="."]
+script = ExtResource("3_hs6a3")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="world_border_thing"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="void"]
 position = Vector2(99, 92)
 shape = SubResource("WorldBoundaryShape2D_f0hyc")
 
