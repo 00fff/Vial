@@ -550,7 +550,7 @@ sources/5 = SubResource("TileSetAtlasSource_d0pg1")
 [node name="Vial" type="Node2D"]
 
 [node name="frogMan" parent="." instance=ExtResource("1_cr66n")]
-position = Vector2(166, -15)
+position = Vector2(168, -12)
 
 [node name="Tard" parent="." instance=ExtResource("1_10i7l")]
 position = Vector2(-99, 8)
